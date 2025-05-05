@@ -64,6 +64,16 @@ class Settings(BaseSettings):
     DATABASE_USERNAME: str
     DATABASE_PASSWORD: str
 
+    # mqtt config
+    MQTT_BROKER: str
+    MQTT_PORT: int
+    MQTT_USER: str
+    MQTT_PASS: str
+    MQTT_TOPIC: str
+
+    # firebase config
+    
+
     @computed_field
     @property
     def SQLALCHEMY_DATABASE_URI(self) -> PostgresDsn:

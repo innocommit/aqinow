@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Request
 from starlette.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
 
 from app.api import api_v1_router
 from app.core.config import settings
@@ -17,6 +18,19 @@ from app.core.response import (
     NotFoundResponse,
     ServerErrorResponse,
 )
+from app.services.sensor_service import mqtt_subscriber, mqtt_unsubscriber
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """
+    Lifespan event handler for the FastAPI application.
+    This function is called when the application starts up and shuts down.
+    """
+    # Perform any startup tasks here
+    mqtt_subscriber()
+    yield
+    # Perform any shutdown tasks here
+    mqtt_unsubscriber()
 
 
 app = FastAPI(

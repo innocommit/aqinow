@@ -6,7 +6,7 @@ function Logo() {
       <div className="flex h-6 w-6 p-1 items-center justify-center rounded-md bg-primary text-primary-foreground">
         <SunIcon />
       </div>
-      <span className="font-bold">APP NAME</span>
+      <span className="font-bold">aqinow</span>
     </div>
   )
 }

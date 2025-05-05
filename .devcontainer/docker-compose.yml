@@ -19,7 +19,7 @@ services:
     image: postgres:latest
     restart: unless-stopped
     volumes:
-      - template-postgres-data:/var/lib/postgresql/data
+      - aqinow-postgres-data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
       POSTGRES_DB: postgres
@@ -28,4 +28,4 @@ services:
       - 22000:5432
   
 volumes:
-  template-postgres-data:
+  aqinow-postgres-data:

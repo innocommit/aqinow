@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import RootProvider from "@/providers/root/root-provider";
 import { getServerSession } from "next-auth";
 import NEXT_AUTH_OPTIONS from "@/configs/next-auth.config";
 
-const poppins = Poppins({ subsets: ["latin" ], weight: "400" });
+const inter = Inter({ subsets: ["latin" ], weight: "400" });
 
 export const metadata: Metadata = {
-  title: "Application Name",
+  title: "Ứng dụng aqinow",
 };
 
 export default async function RootLayout({
@@ -20,7 +20,7 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={poppins.className}
+        className={inter.className}
       >
         <RootProvider session={session}>
           {children}

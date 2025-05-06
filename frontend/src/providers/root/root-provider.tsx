@@ -55,7 +55,7 @@ function RootProvider({
         <AppSessionProvider>
           <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="light"
             disableTransitionOnChange
             enableSystem
           >
